@@ -1,0 +1,227 @@
+{% extends "layout.html" %}
+{% load static %}
+{% block body %}
+<section class="page-header bg_img" data-background="{% static 'assets/images/banner/page-header.jpg'%}">
+    <div class="container">
+        <div class="page-header-content">
+            <h1 class="title">سوالات متداول</h1>
+            <ul class="breadcrumb">
+                <li>
+                    <a href="index.html">خانه</a>
+                </li>
+                <li>
+                    <a href="#">صفحات</a>
+                </li>
+                <li>
+                    سوالات متداول
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+
+
+
+<section class="faqs-single-section padding-top padding-bottom">
+    <div class="blog-section padding-top padding-bottom">
+        <div class="container">
+            <div class="row mb--50">
+                <div class="col-lg-8 mb-50">
+                    <div class="class-single-item mb-30">
+                        <div class="class-single-inner">
+                            <div class="class-single-thumb">
+                                <img src="{% static 'assets/images/blog/blog15.jpg'%}" alt="class">
+                            </div>
+                           
+                           
+                        </div>
+                   
+                 
+                        
+                            <div class="widget widget-comment">
+                                    <div class="widget-header">
+                                        <h5 class="title">3 سوالات</h5>
+                                    </div>
+                                    {% csrf_token %} 
+                                    {% for item in dataask %} 
+                                <div class="widget-body p-0">
+                                
+                                    <ul class="comment-area">
+                                        <li>
+                                            <div class="comment-item">
+                                                   
+                                                        <div class="comment-thumb">
+                                                            <a href="#"><img src="{% static 'assets/images/blog/author1.jpg' %}" alt="blog"></a>
+                                                        </div>
+                                                        <div class="comment-content">
+                                                    
+                                                            <div class="comment-header">
+                                                                <h6 class="title"><a href="#"> {{item.title}}</a></h6>
+                                                                <a href="#" class="info">  {{item.created}} </a>
+                                                                <p>   {{item.caption}}</p>
+                                                                <a href="/get_ask_with_comment/{{item.id}}" class="reply"><i class="fas fa-reply-all"  ></i>پاسخ</a>
+                                                            
+                                                            
+                                                                <button type="button"  onclick="setdata('{{item.title}}','{{item.caption}}','{{item.id}}')"
+                                                                class="custom-button" data-toggle="modal" data-target="#myModal">
+                                                                <span>ویرایش    </span>
+                                                                </button>
+
+                                                                <button type="button"  onclick="$('.id').val('{{item.id}}')"
+                                                                        class="custom-button" data-toggle="modal" data-target="#myModaldelet">
+                                                                        <span>حذف    </span>
+                                                                </button>
+                                                        
+
+                                                        
+                                                    
+                                                            </div>
+                                                        </div>
+                                            </div>
+
+                                                   
+                                                    {% endfor  %}
+                                        </li>
+                                    </ul>      
+                                                    <p>   {{ listmyjavab.text }}</p> 
+                                        
+                                                  
+                                </div>
+                            </div>                                       
+                                        
+                                       
+                                   
+                                </div>
+                            </div>
+                       
+                            <div class="widget widget-comment">
+                                <div class="widget-header">
+                                    <h5 class="title">پرسش و پاسخ </h5>
+                                </div>
+                                <div class="widget-body">
+                                    <div class="card">
+                                        <div class="card-header text-right " >
+
+                                            <button type="button" class="custom-button"  onclick="creature()" data-toggle="modal" data-target="#myModal">
+                                                   <span>افزودن سوال</span>
+                                            </button>
+                                        </div>
+                                        <div class="card-body">
+                                                <form method="post" class="form-getdata" action="">
+                                                    {% csrf_token %}
+                                                        <input type="hidden"  name="tocken" value="bvnbvnvnb">
+                                                        <div class="form-group text-right">
+                                                        <label for="search" >جستجو</label>
+                                                        <input type="text" class="form-control" id="search" name="search" placeholder="جستجو کنید">
+                                                    </div>
+                                                    <div class="wite" >
+
+                                                    </div>
+
+
+                                                </form>
+
+
+                                         
+
+
+                                        </div>
+                                    </div> 
+                                </div>
+                            </div>
+                         
+                            
+                </div>
+            </div>    
+        </div>                  
+    </div> 
+         
+
+
+</section>
+<div class="modal" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content" style="direction:rtl;">
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">پرسش</h4>
+          <button type="button" class="close ml-0" data-dismiss="modal">&times;</button>
+        </div>
+
+        <!-- Modal body -->
+        <div class="modal-body">
+            <form method="post" action="" class="frm">
+                        {% csrf_token %}
+                        {% for item in panelask %}
+                             <div class="form-group ">
+                                {{ item.label_tag }}
+                                {{ item }}
+                             </div>
+                        {% endfor %}
+
+
+                       <div class="alert alert-info result " >
+
+                       </div>
+                <div class="text_center" >
+                    <button type="button" class="btn btn-info ml-2  savedata " >ثبت سوال   </button>
+
+                </div>
+            </form>
+        </div>
+
+
+
+      </div>
+    </div>
+</div>
+
+<div class="modal" id="myModaldelet">
+    <div class="modal-dialog">
+      <div class="modal-content" style="direction:rtl;">
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">تاییدیه حذف</h4>
+          <button type="button" class="close ml-0" data-dismiss="modal">&times;</button>
+        </div>
+
+        <!-- Modal body -->
+        <div class="modal-body text-right">
+            <form method="post" action="" class="frm-delet">
+                  {% csrf_token %}
+                <input type="hidden" name="id" class="id">
+                    ایا مایل به حذف هستید
+
+
+                       <div class="alert alert-info result-delet " >
+
+                       </div>
+                <div class="text_center" >
+                    <button type="button" class="btn btn-info ml-2  ok_delet " >بله   </button>
+
+                </div>
+            </form>
+        </div>
+
+
+
+      </div>
+    </div>
+</div>
+
+   
+{% endblock %}
+{% block script %}
+
+
+   <script src="{% static 'assets/js/script_panels.js' %}"></script>
+{% endblock %}
+
+
+
+
+
+    

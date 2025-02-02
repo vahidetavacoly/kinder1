@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+{% load static %}
+{% block body %}
+<section class="page-header bg_img" data-background="{% static 'assets/images/banner/page-header.jpg'%}">
+    <div class="container">
+        <div class="page-header-content">
+            <h1 class="title">پست های اخیر وبلاگ</h1>
+            <ul class="breadcrumb">
+                <li>
+                    <a href="index.html">خانه</a>
+                </li>
+                <li>
+                    وبلاگ
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!-- ==========Banner Section Ends Here========== -->
+
+
+<!-- ==========Blog Section Starts Here========== -->
+<div class="blog-section padding-top padding-bottom">
+    <div class="container">
+        <div class="row mb-30-none justify-content-center">
+            <div class="col-xl-4 col-md-6">
+                <div class="post-item">
+                    <div class="post-thumb">
+                        <a href="blog-single.html"><img src="assets/images/blog/blog01.jpg" alt="blog"></a>
+                    </div>
+                    <div class="post-content">
+                        <div class="post-top">
+                            <form class="contact-form"  action="saveveblog" method="post">
+
+                                {% csrf_token %}
+                                {% for item in form %}
+                                    <div class="fom_group ">
+                                        {{ item.label_tag}}
+                                        {{ item }}
+                    
+                                    </div>
+                                {% endfor %}
+                        
+                           
+                            <div class="form-group w-100 text-center">
+                                <button class="custom-button"><span>ارسال </span></button>
+                            </div>
+                        </form> 
+                    </div>
+<!-- ==========Blog Section Ends Here========== -->
+
+
+{% endblock %}
+{% block script %}
+
+
+   <script src="{% static 'js/script_panels.js' %}"></script>
+{% endblock %}
+
+

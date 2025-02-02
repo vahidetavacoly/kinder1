@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+{% block body %}
+<section class="coming-soon-section min-height-section bg_img" data-background="assets/images/error/error-bg.jpg">
+    <div class="container">
+        <div class="coming-wrapper">
+            <div class="inner-logo">
+                <a href="index.html"><img src="assets/images/error/logo.png" alt="error"></a>
+            </div>
+            <ul class="coming-countdown">
+                <li>
+                    <h4 class="count-title"><span class="days">00</span></h4>
+                    <p class="days_text">روز</p>
+                </li>
+                <li>
+                    <h4 class="count-title"><span class="hours">00</span></h4>
+                    <p class="hours_text">ساعت</p>
+                </li>
+                <li>
+                    <h4 class="count-title"><span class="minutes">00</span></h4>
+                    <p class="minu_text">دقیقه</p>
+                </li>
+                <li>
+                    <h4 class="count-title"><span class="seconds">00</span></h4>
+                    <p class="seco_text">ثانیه</p>
+                </li>
+            </ul>
+            <h1 class="coming-soon-title">بزودی می آییم</h1>
+        </div>
+    </div>
+</section>
+{% endblock %}
+{% block script %}
+
+
+   <script src="{% static 'js/script_panels.js' %}"></script>
+{% endblock %}

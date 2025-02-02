@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+{% load static %}
+{% block body %}
+<section class="page-header bg_img" data-background="{% static 'assets/images/banner/page-header.jpg' %}">
+    <div class="container">
+        <div class="page-header-content">
+            <h1 class="title"> فرم ورود اطلاعات کودک </h1>
+            <ul class="breadcrumb">
+                <li>
+                    <a href="/index">خانه</a>
+                </li>
+               
+                <li>
+                    ثبت نام
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+
+    <div class="container ">
+        <div class="account-wrapper">
+            <h3 class="title">ثبت نام</h3>
+            
+            <form   action="sabt" method="post"  enctype="multipart/form-data" >
+                {% csrf_token %}
+                {% for item in form %}
+                    <div class="p-t-31 p-b-9 text-right">
+                        {{ item.label_tag}}
+                        {{ item }}
+                    </div>
+                {% endfor %}
+
+                <div class="container-form-btn m-t-25">
+
+                    <button class="btn btn-primary mt-5" type="submit" >
+                        ثبت نام
+                    </button>
+                </div>
+            </form>
+           
+        </div>
+    </div>
+
+
+
+{% endblock %}
+{% block script %}
+   {{ form.media }}
+   <script src="{% static 'assets/js/script_panels.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,421 @@
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>    پیش دبستانی و مهد کودک ایین</title>
+
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/nice-select.css' %}">
+	<link rel="stylesheet" href="{% static 'assets/css/slick.csss' %}">
+	<link rel="stylesheet" href="{% static 'assets/css/slick-theme.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/odometer.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/main.css' %}">
+
+    <link rel="shortcut icon" href="{% static 'assets/images/favicon.png' %}" type="image/x-icon">
+</head>
+
+<body>
+
+
+    <!-- ==========Preloader Overlay Starts Here========== -->
+    <div class="overlayer">
+        <div class="loader">
+            <div class="loader-inner"></div>
+        </div>
+    </div>
+    <div class="scrollToTop"><i class="fas fa-angle-up"></i></div>
+    <div class="overlay"></div>
+    <div class="overlayTwo"></div>
+    <!-- ==========Preloader Overlay Ends Here========== -->
+
+    <!-- ==========Header Section Starts Here========== -->
+    <header>
+        <div class="header-top">
+            <div class="container">
+                <div class="header-top-area">
+                   
+                    <ul class="social-icons">
+                        <li>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fab fa-whatsApp"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fab fa-telegram"></i></a>
+                        </li>
+                       
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="header-bottom">
+            <div class="container">
+                <div class="header-wrapper">
+                    <div class="logo">
+                        <a href="index.html">
+                            <img src="{% static 'assets/images/logo/logo.png'%}" alt="logo">
+                        </a>
+                    </div>
+                    <div class="menu-area">
+                        <ul class="menu">
+                            <li>
+                                <a href="#0"><i class="fas fa-layer-group"></i>پنل مدیریت </a>
+                                <ul class="submenu">
+                                   
+                                    <li>
+                                        <a href="/listask1" class="">  پاسخ پرسش ها</a>
+                                    </li>
+                                    
+                                    
+                                    <li>
+                                        <a href="/creatveblog" class=""> بارگذاری وبلاگ  </a>
+                                    </li>
+                                   
+                                    <li>
+                                        <a href="/creatclas" class=""> بارگذاری کلاس   </a>
+                                    </li>
+                                   
+                                    <li>
+                                        <a href="/creatfilm" class=""> بارگذاری  فیلم ها  </a>
+                                    </li>
+                                   
+                                    <li>
+                                        <a href="/gallery_2" class=""> بارگذاری  عکس ها  </a>
+                                    </li>
+                                  
+                                   
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#0"><i class="fas fa-home"></i>خانه</a>
+                                <ul class="submenu">
+                                    <li>
+                                        <a href="/index" class="active">صفحه اصلی یک</a>
+                                    </li>
+                                    
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="/about"><i class="fas fa-user"></i>در باره ما</a>
+                            </li>
+                            <li>
+                                <a href="#0"><i class="fas fa-book"></i>کلاس ها</a>
+                                <ul class="submenu">
+                                    <li>
+                                        <a href="/class">کلاسهای فوق برنامه </a>
+                                    </li>
+                                    
+                                    <li>
+                                        <a href="/class_schedule">برنامه هفتگی </a>
+                                    </li>
+                                   
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#0"><i class="fas fa-pencil-alt"></i>وبلاگ</a>
+                                <ul class="submenu">
+                                    <li>
+                                        <a href="/blog_grid">وبلاگ  </a>
+                                    </li>
+                                  
+                                    <li>
+                                        <a href="/blog_single">جزئیات وبلاگ</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#0"><i class="fas fa-layer-group"></i>صفحات</a>
+                                <ul class="submenu">
+                                    <li>
+                                        <a href="#0">مربیان</a>
+                                        <ul class="submenu">
+                                            <li>
+                                                <a href="/teacher">مربیان ما</a>
+                                            </li>
+                                            
+                                          
+                                            <li>
+                                                <a href="/loginp"> فرم ورود اطلاعات مربی</a>
+                                            </li>
+
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#0">حساب کاربری</a>
+                                        <ul class="submenu">
+                                            <li>
+                                                <a href="/logink">ورود</a>
+                                            </li>
+                                            <li>
+                                                <a href="/registration">ثبت نام</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#0">  کودکان </a>
+                                        <ul class="submenu">
+                                            <li>
+                                                <a href="/listk">لیست کودکان</a>
+                                            </li>
+                                            <li>
+                                                <a href="/logink"> فرم ورود اطلاعات کودک</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                   
+                                    
+                                    <li>
+                                        <a href="/faqs">سوالات متداول</a>
+                                    </li>
+                                    <li>
+                                        <a href="#0">گالری ما</a>
+                                        <ul class="submenu">
+                                            <li>
+                                                <a href="/film">جشن ها و مراسمات   </a>
+                                            </li>
+                                            <li>
+                                                <a href="/show_image_all">گالری  </a>
+                                            </li>
+                                            
+                                        </ul>
+                                    </li>
+                                  
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="/contact"><i class="fas fa-map-marker-alt"></i>تماس با ما</a>
+                            </li>
+                        </ul>
+                        <div class="search-button">
+                            <a href="#">
+                                <i class="fas fa-search"></i>
+                            </a>
+                        </div>
+                        <div class="cart-button">
+                            <a href="#">
+                                <span class="cart-amount">5</span>
+                                <i class="fas fa-shopping-basket"></i>
+                            </a>
+                        </div>
+                        <div class="header-bar d-lg-none">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <div class="ellepsis-bar d-lg-none">
+                            <i class="fas fa-ellipsis-h"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ==========Header Section Ends Here========== -->
+
+    <!-- ===========Header Search=========== -->
+    <div class="header-form">
+        <div class="bg-lay">
+            <div class="cross">
+                <i class="fas fa-times"></i>
+            </div>
+        </div>
+        <form class="form-container">
+            <input type="text" placeholder="جستجو ..." name="name">
+            <button type="submit">جستجو</button>
+        </form>
+    </div>
+    <!-- ===========Header Search=========== -->
+
+    <!-- ===========Header Cart=========== -->
+    <div class="cart-sidebar-area">
+        <div class="top-content">
+            <a href="index.html" class="logo">
+                <img src="{% static 'assets/images/logo/logo.png' %}" alt="logo">
+            </a>
+            <span class="side-sidebar-close-btn"><i class="fas fa-times"></i></span>
+        </div>
+        <div class="bottom-content">
+            <div class="cart-products">
+                <h4 class="title">سبد خرید</h4>
+                <div class="single-product-item">
+                    <div class="thumb">
+                        <img src="{% static 'assets/images/shop/shop01.png' %}" alt="shop">
+                    </div>
+                    <div class="content">
+                        <h4 class="title">مداد رنگی</h4>
+                        <div class="price"><span class="pprice">80 تومان</span> <del class="dprice">120 تومان</del></div>
+                        <a href="#" class="remove-cart">حذف</a>
+                    </div>
+                </div>
+                <div class="single-product-item">
+                    <div class="thumb">
+                        <img src="{% static 'assets/images/shop/shop02.png' %}" alt="shop">
+                    </div>
+                    <div class="content">
+                        <h4 class="title">کوله پشتی</h4>
+                        <div class="price"><span class="pprice">80 تومان</span> <del class="dprice">120 تومان</del></div>
+                        <a href="#" class="remove-cart">حذف</a>
+                    </div>
+                </div>
+                <div class="single-product-item">
+                    <div class="thumb">
+                        <img src="{% static 'assets/images/shop/shop03.png' %}" alt="shop">
+                    </div>
+                    <div class="content">
+                        <h4 class="title">کاغذ رنگی</h4>
+                        <div class="price"><span class="pprice">80 تومان</span> <del class="dprice">120 تومان</del></div>
+                        <a href="#" class="remove-cart">حذف</a>
+                    </div>
+                </div>
+                <div class="single-product-item">
+                    <div class="thumb">
+                        <img src="{% static 'assets/images/shop/shop04.png' %}"  alt="shop" >
+                    </div>
+                    <div class="content">
+                        <h4 class="title">کوله پشتی</h4>
+                        <div class="price"><span class="pprice">80 تومان</span> <del class="dprice">120 تومان</del></div>
+                        <a href="#" class="remove-cart">حذف</a>
+                    </div>
+                </div>
+                <div class="single-product-item">
+                    <div class="thumb">
+                        <img src="{% static 'assets/images/shop/shop05.png ' %}" alt="shop" >
+                    </div>
+                    <div class="content">
+                        <h4 class="title">کتاب کمیک</h4>
+                        <div class="price"><span class="pprice">80 تومان</span> <del class="dprice">120 تومان</del></div>
+                        <a href="#" class="remove-cart">حذف</a>
+                    </div>
+                </div>
+                <div class="btn-wrapper text-center">
+                    <a href="#" class="custom-button"><span>بررسی</span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ===========Header Cart=========== -->
+
+    <!-- ==========Banner Section Starts Here========== -->
+    {% block body %}{% endblock %}
+    <!-- ==========Footer Section Starts Here========== -->
+    <footer class="bg_img" data-background="{% static 'assets/images/footer/footer-bg.jpg' %}">
+        <div class="footer-top">
+            <div class="container">
+                <div class="row mb--50">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="footer-widget widget-about">
+                            <h5 class="title">درباره ما</h5>
+                            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله.</p>
+                            <ul class="contact">
+                                <li><i class="fas fa-headphones-alt"></i><a href="Tel:02112345678">02187654321, 02112345678</a></li>
+                                <li><i class="fas fa-home"></i>  مشهد-کلاهدوز  </li>
+                                <li><i class="fas fa-globe-asia"></i><a href="#">www.adminkittonschool.org </a></li>
+                            </ul>
+                            <ul class="social-icons">
+                                <li>
+                                    <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#" class="twitter"><i class="fab fa-twitter"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#" class="instagram"><i class="fab fa-instagram"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#" class="pinterest"><i class="fab fa-pinterest"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="footer-widget widget-blog">
+                            <h5 class="title">پست های اخیر وبلاگ</h5>
+                            <ul class="footer-blog">
+                                <li>
+                                    <div class="thumb">
+                                        <a href="blog-single.html">
+                                            <img src="{% static 'assets/images/footer/blog1.png'  %}" alt="footer">
+                                        </a>
+                                    </div>
+                                    <div class="content">
+                                        <a href="blog-single.html">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم</a>
+                                        <span>18 اسفند 1400</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="thumb">
+                                        <a href="blog-single.html">
+                                            <img src="{% static 'assets/images/footer/blog2.png' %}" alt="footer">
+                                        </a>
+                                    </div>
+                                    <div class="content">
+                                        <a href="blog-single.html">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم</a>
+                                        <span>18 اسفند 1400</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 pl-xl-4">
+                        <div class="footer-widget widgt-form">
+                            <h5 class="title">اشتراک در خبرنامه</h5>
+                            <p>ایمیل خود را وارد کنید و آخرین به روزرسانی ها و پیشنهادات را دریافت کنید</p>
+                            <form class="footer-form">
+                                <input type="text" placeholder="ایمیل خود را وارد کنید" name="email">
+                                <button type="submit">
+                                    <span class="shape"></span>
+                                    <span><i class="flaticon-vegan"></i> اشترک</span>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>
+                    &copy; 1400 همه حقوق محفوظ است. راستچین شده توسط <a href="https://www.rtl-theme.com/author/davod_taheri/" target="_blank">لوکس تم</a>
+                </p>
+                <p>
+                    &copy;      طراح سایت:وحیده توکلی زاده-
+                </p>
+            </div>
+        </div>
+       
+    </footer>
+    <!-- ==========Footer Section Ends Here========== -->
+   
+    <script src="{% static 'assets/js/jquery.js' %}"></script>
+    <script src="{% static 'assets/js/modernizr-3.6.0.min.js' %}"></script>
+    <script src="{% static 'assets/js/plugins.js' %}"></script>
+    <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'assets/js/progress.js' %}"></script>
+    <script src="{% static 'assets/js/isotope.pkgd.min.js' %}"></script>
+    <script src="{% static 'assets/js/magnific-popup.js' %}"></script>
+    <script src="{% static 'assets/js/wow.min.js' %}"></script>
+    <script src="{% static 'assets/js/viewport.jquery.js' %}"></script>
+    <script src="{% static 'assets/js/odometer.min.js' %}"></script>
+    <script src="{% static 'assets/js/nice-select.js' %}"></script>
+	<script src="{% static 'assets/js/slick.min.js' %}"></script>
+    <script src="{% static 'assets/js/main.js' %}"></script>
+    {% block script %}{% endblock %}
+
+    
+       
+       
+</body>
+
+</html>

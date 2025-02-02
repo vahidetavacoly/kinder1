@@ -1,0 +1,204 @@
+{% extends "layout.html" %}
+{% load static %}
+{% block body %}+
+<section class="page-header bg_img" data-background="{% static 'assets/images/banner/page-header.jpg' %}">
+    <div class="container">
+        <div class="page-header-content">
+            <h3 class="title">جزئیات کلاس</h3>
+            <ul class="breadcrumb">
+                <li>
+                    <a href="index.html">خانه</a>
+                </li>
+                <li>
+                    <a href="classes.html">کلاس ها</a>
+                </li>
+                <li>
+                    جزئیات کلاس
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!-- ==========Banner Section Ends Here========== -->
+
+
+<!-- ==========Class Section Starts Here========== -->-
+<section class="class-single-section padding-top padding-bottom">
+    <div class="container">
+        <div class="row mb--50">
+            <div class="col-lg-8 mb-50">
+                <div class="class-single-item">
+                    <div class="class-single-inner">
+                        <div class="class-single-thumb">
+                            <img src="assets/images/class/single1.jpg" alt="class">
+                        </div>
+                        <div class="class-single-content">
+                            
+                            <ul class="meta-post">
+                                {% csrf_token %} 
+                                {% for item in tabel %} 
+
+                               
+                             
+                            </ul>
+                          
+                            {% endfor  %}
+                            <blockquote class="single-quote">
+                                <div class="quotes">
+                                {{item.post}} 
+                                 
+                                </div>
+                            </blockquote>
+                           
+                        </div>
+                        <div class="tags-area">
+                            <ul class="tags">
+                                <li>
+                                    <a href="#">کودکستان ها </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="active">{{item.mizantahsilat}}</a>
+                                </li>
+                             
+                            </ul>
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 mb-50">
+                <aside>
+                    <div class="widget widget-feature">
+                        <div class="widget-header">
+                            <h5 class="title">ویژگی های دوره</h5>
+                        </div>
+                        <div class="widget-body">
+                            {% csrf_token %} 
+                            {% for item in tabel %}
+                            <ul>
+                                <li>
+                                    <div class="ques cl-i-one"><i class="fas fa-bell"></i>تاریخ شروع</div>
+                                    <div class="ans">{{item.datetime}}</div>
+                                </li>
+                                <li>
+                                    <div class="ques cl-i-two"><i class="fas fa-user"></i>سن</div>
+                                    <div class="ans">{{item.age}}</div>
+                                </li>
+                               
+                                <li>
+                                    <div class="ques cl-i-four"><i class="fas fa-bus"></i>زمان</div>
+                                    <div class="ans">{{tem.time}}</div>
+                                </li>
+                                <li>
+                                    <div class="ques cl-i-five"><i class="fas fa-address-book"></i>  تعداد جلسات</div>
+                                    <div class="ans">{{item.tedad_jalasat}}</div>
+                                </li>
+                             
+                            
+                                <li>
+                                    <div class="ques cl-i-eight"><i class="fas fa-coins"></i>شهریه</div>
+                                    <div class="ans">{{item.price}}</div>
+                                </li>
+                            </ul>
+                          
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="widget widget-post">
+                        <div class="widget-header">
+                            <h5 class="title">محبوب ترین پست ها</h5>
+                        </div>
+                        <div class="widget-body">
+                            <ul>
+                                <li>
+                                    <div class="thumb">
+                                        <a href="#">
+                                            <img src="assets/images/blog/side1.jpg" alt="وبلاگ">
+                                        </a>
+                                    </div>
+                                    <div class="content">
+                                        <a href="#">{{item.title}}</a>
+                                      
+                                    </div>
+                                </li>
+                             
+                              
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="widget widget-gallery">
+                        <div class="widget-header">
+                            <h5 class="title">عکس های گالری</h5>
+                        </div>
+                        <div class="widget-body">
+                            <ul>
+                                <li>
+                                    <a href="assets/images/gallery/gallery7.jpg" class="img-pop">
+                                        <img src="assets/images/gallery/gallery7.jpg" alt="کودکان">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="assets/images/gallery/gallery8.jpg" class="img-pop">
+                                        <img src="assets/images/gallery/gallery8.jpg" alt="پرسنل">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="assets/images/gallery/gallery9.jpg" class="img-pop">
+                                        <img src="assets/images/gallery/gallery9.jpg" alt="مهد کودک">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="assets/images/gallery/gallery10.jpg" class="img-pop">
+                                        <img src="assets/images/gallery/gallery10.jpg" alt="جشن ها">
+                                    </a>
+                                </li>
+                               
+                            
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="widget widget-tags">
+                        <div class="widget-header">
+                            <h5 class="title">برچسب های محبوب</h5>
+                        </div>
+                        <div class="widget-body">
+                            <ul class="tags">
+                                
+                             
+                                <li>
+                                    <a href="#">انگلیسی </a>
+                                </li>
+                                <li>
+                                    <a href="#"> ورزش</a>
+                                </li>
+                                <li>
+                                    <a href="#">چرتکه</a>
+                                </li>
+                              
+                                <li>
+                                    <a href="#">کاردستی</a>
+                                </li>
+                                <li>
+                                    <a href="#"> نقاشی</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ==========Class Section Ends Here========== -->
+
+
+{% endblock %}
+{% block script %}
+
+
+   <script src="{% static 'js/script_panels.js' %}"></script>
+{% endblock %}
+-
+
+
+         

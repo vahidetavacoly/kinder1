@@ -1,0 +1,118 @@
+{% extends "layout.html" %}
+{% load static %}
+{% block body %}
+
+
+    <!-- ==========Banner Section Starts Here========== -->
+    <section class="page-header bg_img" data-background="{% static 'assets/images/banner/page-header.jpg'%}">
+        <div class="container">
+            <div class="page-header-content">
+                <h1 class="title">تماس با ما</h1>
+                <ul class="breadcrumb">
+                    <li>
+                        <a href="index.html">خانه</a>
+                    </li>
+                    <li>
+                        تماس با ما
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <!-- ==========Banner Section Ends Here========== -->
+
+
+    <!-- ==========Contact Section Starts Here========== -->
+    <section class="contact-section padding-top padding-bottom">
+        
+
+            <div class="widget widget-comment">
+                <div class="widget-header">
+                    <h5 class="title">ارسال نظرات</h5>
+                </div>
+                <div class="widget-body">
+                    <form class="comment-form" id="contact_form_submit" action="{{ action }}" method="post">
+                            {% csrf_token %}
+                            {% for item in form %}
+                            <div class="form-group ">
+                                {{ item.label_tag}}
+                                {{item}}
+                            </div>
+                        {% endfor %}
+                        <div class="form-group">
+                            <button type="submit" class="custom-button"><span>ارسال نظر</span></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+    
+    </section>
+    <!-- ==========Contact Section Ends Here========== -->
+
+
+    <!-- ==========Map Section Starts Here========== -->
+    <div class="map-section pos-rel">
+        <div class="maps"></div>
+        <div class="contact-area padding-bottom padding-top pt-lg-0 pb-lg-0">
+
+            <div class="counter-section padding-top padding-bottom bg_img" data-background="{% static 'assets/images/counter/counter-bg.jpg'%}">
+            <div class="container">
+                <div class="contact-wrapper">
+                    <div class="contact-item">
+                        <div class="contact-thumb">
+                            <img src="assets/images/contact/01.png" alt="contact">
+                        </div>
+                        <div class="contact-content">
+                            <h6 class="title">جلسات کلاس</h6>
+                            <ul>
+                                <li>شنبه - چهارشنبه</li>
+                                <li>8 صبح - 11 صبح (جمعه تعطیل)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-thumb">
+                            <img src="assets/images/contact/02.png" alt="contact">
+                        </div>
+                        <div class="contact-content">
+                            <h6 class="title">آدرس کیتون</h6>
+                            <ul>
+                                <li>ایران ، تهران ، فرشته ، خیابان هستی ، ساختمان ستاره</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-thumb">
+                            <img src="assets/images/contact/03.png" alt="contact">
+                        </div>
+                        <div class="contact-content">
+                            <h6 class="title">ساعات کاری</h6>
+                            <ul>
+                                <li>شنبه - چهارشنبه</li>
+                                <li>8 صبح - 5 بعد از ظهر</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-thumb">
+                            <img src="assets/images/contact/04.png" alt="contact">
+                        </div>
+                        <div class="contact-content">
+                            <h6 class="title">تلفن و ایمیل</h6>
+                            <ul>
+                                <li><a href="Tel:02112345678">02112345678, 02187654321</a></li>
+                                <li><a href="Mailto:sfkljsdfsj@gmail.com">enroll@kittons.com</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+{% endblock %}
+{% block script %}
+
+
+   <script src="{% static 'js/script_panels.js' %}"></script>
+{% endblock %}

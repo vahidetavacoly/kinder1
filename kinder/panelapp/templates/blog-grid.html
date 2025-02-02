@@ -1,0 +1,82 @@
+{% extends "layout.html" %}
+{% load static %}
+{% block body %}
+<section class="page-header bg_img" data-background="{% static 'assets/images/banner/page-header.jpg' %}">
+    <div class="container">
+        <div class="page-header-content">
+            <h1 class="title">پست های اخیر </h1>
+            <ul class="breadcrumb">
+                <li>
+                    <a href="index.html">خانه</a>
+                </li>
+                <li>
+                    وبلاگ
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!-- ==========Banner Section Ends Here========== -->
+
+
+<!-- ==========Blog Section Starts Here========== -->
+<div class="blog-section padding-top padding-bottom">
+    <div class="container">
+        <div class="row mb-30-none justify-content-center">
+            <div class="col-xl-4 col-md-6">
+                <div class="post-item">
+                    {% csrf_token %} 
+                    {% for item in tabel %}               
+                        <div class="post-thumb">
+                            <a href="blog-single.html"><img src={% static 'assets/images/blog/blog01.jpg' %}"" alt="وبلاگ"></a>
+                        </div>
+                        <div class="post-content">
+                                    <div class="post-top">
+                                   
+                                        <h5 class="title"><a href="blog-single.html">  {{item.title}} </a>    </h5>
+                                        <div class="post-meta cate">
+                                            <a href="#"><i class="far fa-calendar"></i> 14 بهمن 1400</a>
+                                            
+                                    </div>
+                                    <p> {{item.post}}   </p>
+                        </div>
+                        <div class="post-bottom">
+                            <a href="/blog_single" class="read">ادامه مطلب</a>
+                            <a href="#" class="comments"><i class="far fa-comments"></i> <span class="comment-number">2</span></a>
+                        </div>
+                </div>
+                    {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>    
+        <ul class="default-pagination">
+            <li>
+                <a href="#"><i class="fas fa-angle-right"></i></a>
+            </li>
+            <li>
+                <a href="#">1</a>
+            </li>
+            <li>
+                <a href="#" class="active">2</a>
+            </li>
+            <li>
+                <a href="#">3</a>
+            </li>
+            <li>
+                <a href="#"><i class="fas fa-angle-left"></i></a>
+            </li>
+        </ul>
+    </div>
+</div>
+<!-- ==========Blog Section Ends Here========== -->
+
+
+{% endblock %}
+{% block script %}
+
+
+   <script src="{% static 'js/script_panels.js' %}"></script>
+{% endblock %}
+
+

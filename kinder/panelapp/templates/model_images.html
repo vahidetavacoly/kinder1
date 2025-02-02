@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block body %}
+<style> .hidden{display:none;}
+.images{margin-top:20px}
+.imagesimg{with:200px;
+height:auto;
+margin:5px}
+</style>
+{% for category in categories%} <button onclick="showModel('model{{category.id}}')" >{{category.name}}</button> {% endfor%}
+{%for category in categories%}
+<div id="model{{category.id}}" class="images hidden"
+>
+    {% for image in category.imagess_set.all %}
+<img src="{{imagess.image.url}}" alt="{{imagess.title}}">
+    {%endfor%}
+
+</div>
+   
+{%endfor%}
+<!-- ==========Gallery Section Ends Here========== -->
+
+
+
+{% endblock %}
+  <!-- ===========Header Cart=========== -->
+
+    <!-- ==========Banner Section Starts Here========== -->
+    {% block script %}
+
+
+    <script src="{% static 'assets/js/script_panels.js' %}"></script>
+ {% endblock %}
+    

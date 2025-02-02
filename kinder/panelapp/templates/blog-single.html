@@ -1,0 +1,223 @@
+{% extends "layout.html" %}
+{% load static %}
+{% block body %}
+<section class="page-header bg_img" data-background="{% static 'assets/images/banner/page-header.jpg' %}">
+    <div class="container">
+        <div class="page-header-content">
+            <h3 class="title">جزئیات وبلاگ</h3>
+            <ul class="breadcrumb">
+                <li>
+                    <a href="index.html">خانه</a>
+                </li>
+                <li>
+                    وبلاگ
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!-- ==========Banner Section Ends Here========== -->
+
+
+<!-- ==========Blog Section Starts Here========== -->
+<div class="blog-section padding-top padding-bottom">
+    <div class="container">
+        <div class="row mb--50">
+            <div class="col-lg-8 mb-50">
+                <div class="class-single-item mb-30">
+                    <div class="class-single-inner">
+                        <div class="class-single-thumb">
+                            <img src="{% static 'assets/images/blog/blog15.jpg'%}" alt="class">
+                        </div>
+                        <div class="class-single-content">          
+                            <ul class="meta-post">
+                                {% csrf_token %} 
+                                {% for item in tabel %}   
+                                <li>
+                                    <a href="#"><i class="far fa-user"></i> {{item.title}}
+                                </li>
+                             
+                            </ul>
+                          
+                            <blockquote class="single-quote">
+                                <div class="quotes">
+                                   
+                                {{item.post}}
+                                </div>
+                            </blockquote>
+                           
+                           
+                            {% endfor  %}            
+                          
+                        </div>
+                       
+                    </div>
+                </div>
+             
+                    <div class="class-single-inner">  
+                        <div class="widget widget-comment">
+                            <div class="widget-header">
+                                <h5 class="title">3 نظرات</h5>
+                            </div>
+                            <div class="widget-body p-0">
+                            
+                                <ul class="comment-area">
+                                    <li>
+                                        <div class="comment-item">
+                                            <div class="comment-thumb">
+                                                <a href="#"><img src="{% static 'assets/images/blog/author1.jpg' %}" alt="blog"></a>
+                                            </div>
+                                            <div class="comment-content">
+                                                {% csrf_token %} 
+                                                {% for item in tabel1 %}  
+                                                <div class="comment-header">
+                                                    <h6 class="title"><a href="#"> {{item.namefull}}</a></h6>
+                                                 
+                                                   
+                                                </div>
+                                                
+                                                <p>   {{item.masg}}</p>
+                                            
+                                                {% endfor  %}  
+                                            </div>
+                                        </div>                                       
+                                    </li>
+                                   
+                                </ul>
+                            </div>
+                        </div>
+                   
+                    </div>    
+                  
+            </div>
+           
+            <div class="col-lg-4 mb-50">
+                <aside>
+                    
+                  
+                    <div class="widget widget-post">
+                        <div class="widget-header">
+                            <h5 class="title">محبوب ترین پست</h5>
+                        </div>
+                        <div class="widget-body">
+                            <ul>
+                                <li>
+                                    <div class="thumb">
+                                        <a href="blog-single.html">
+                                            <img src="{% static 'assets/images/blog/side1.jpg' %}" alt="blog">
+                                        </a>
+                                    </div>
+                                    <div class="content">
+                                        <a href="blog-single.html">چگونه کودکان تجربه های زندگی را درک می کنند</a>
+                                        <span>14 بهمن 1400</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="thumb">
+                                        <a href="blog-single.html">
+                                            <img src="{% static '' %}assets/images/blog/side2.jpg" alt="blog">
+                                        </a>
+                                    </div>
+                                    <div class="content">
+                                        <a href="blog-single.html">چرا مهارت های هوازی مهارت های ریاضی بهتری دارند</a>
+                                        <span>14 بهمن 1400</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="thumb">
+                                        <a href="blog-single.html">
+                                            <img src="{% static '' %}assets/images/blog/side3.jpg" alt="blog">
+                                        </a>
+                                    </div>
+                                    <div class="content">
+                                        <a href="blog-single.html">چگونه کودکان تجربه های زندگی را درک می کنند</a>
+                                        <span>14 بهمن 1400</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="thumb">
+                                        <a href="blog-single.html">
+                                            <img src="{% static '' %}assets/images/blog/side4.jpg" alt="blog">
+                                        </a>
+                                    </div>
+                                    <div class="content">
+                                        <a href="blog-single.html">مرکز پشتیبانی چه برای ارائه دهنده نیمه هادی</a>
+                                        <span>14 بهمن 1400</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="widget widget-gallery">
+                        <div class="widget-header">
+                            <h5 class="title">عکس های گالری</h5>
+                        </div>
+                        <div class="widget-body">
+                            <ul>
+                                <li>
+                                    <a href="{% static 'assets/images/gallery/gallery7.jpg' %}" class="img-pop">
+                                        <img src="{% static 'assets/images/gallery/gallery7.jpg' %}" alt="gallery">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{% static 'assets/images/gallery/gallery8.jpg' %}" class="img-pop">
+                                        <img src="{% static 'assets/images/gallery/gallery8.jpg' %}" alt="gallery">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{% static 'assets/images/gallery/gallery9.jp' %}g" class="img-pop">
+                                        <img src="{% static 'assets/images/gallery/gallery9.jpg' %}" alt="gallery">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{% static 'assets/images/gallery/gallery10.jpg' %}" class="img-pop">
+                                        <img src="{% static 'assets/images/gallery/gallery10.jpg' %}" alt="gallery">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{% static 'assets/images/gallery/gallery11.jpg' %}" class="img-pop">
+                                        <img src="{% static 'assets/images/gallery/gallery11.jpg' %}" alt="gallery">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{% static 'assets/images/gallery/gallery12.jpg' %}" class="img-pop">
+                                        <img src="{% static 'assets/images/gallery/gallery12.jpg' %}" alt="gallery">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{% static 'assets/images/gallery/gallery8.jpg' %}" class="img-pop">
+                                        <img src="{% static 'assets/images/gallery/gallery8.jpg' %}" alt="gallery">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{% static 'assets/images/gallery/gallery9.jpg' %}" class="img-pop">
+                                        <img src="{% static 'assets/images/gallery/gallery9.jpg' %}" alt="gallery">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{% static 'assets/images/gallery/gallery10.jpg' %}" class="img-pop">
+                                        <img src="{% static 'assets/images/gallery/gallery10.jpg' %}" alt="gallery">
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                   
+                  
+                </aside>
+              
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ==========Blog Section Ends Here========== -->
+
+
+{% endblock %}
+{% block script %}
+
+
+   <script src="{% static 'js/script_panels.js' %}"></script>
+{% endblock %}
+
+                                        

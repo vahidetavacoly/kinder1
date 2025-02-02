@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+{% load static %}
+{% block body %}
+<section class="page-header bg_img" data-background="{% static 'assets/images/banner/page-header.jpg'%}">
+    <div class="container">
+        <div class="page-header-content">
+            <div class="widget widget-comment">
+                <div class="widget-header">
+                    <h5 class="title">کاربر عزیز  </h5>
+                </div>
+                <div class="widget-body p-0">
+                
+                    <ul class="comment-area">
+                        <li>
+                            <div class="comment-item">
+                                <div class="comment-thumb">
+                                    <a href="#"><img src="{% static 'assets/images/blog/author1.jpg' %}" alt="blog"></a>
+                                </div>
+                                <div class="comment-content">
+                                   
+                                    <p>   {{ listmyjavab.text }}</p> 
+                                    
+                                </div>
+                            </div>                                       
+                        </li>
+                       
+                    </ul>
+                </div>
+            </div>
+            <ul class="breadcrumb">
+                <li>
+                    <a href="index.html">خانه</a>
+                </li>
+                <li>
+                    <a href="#">صفحات</a>
+                </li>
+                <li>
+                    سوالات متداول
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+   
+{% endblock %}
+{% block script %}
+
+
+   <script src="{% static 'assets/js/script_panels.js' %}"></script>
+{% endblock %}
+
+
+
+
+
+    

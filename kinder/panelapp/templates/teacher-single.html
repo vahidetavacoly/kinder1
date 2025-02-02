@@ -1,0 +1,151 @@
+{% extends "layout.html" %}
+{% load static %}
+{% block body %}
+<section class="page-header bg_img" data-background="{%static 'assets/images/banner/page-header.jpg'%}">
+    <div class="container">
+        <div class="page-header-content">
+            <h1 class="title"> {{ datap.name }} {{ datap.family }}  </h1>
+            <ul class="breadcrumb">
+                <li>
+                    <a href="index.html">خانه</a>
+                </li>
+               
+            </ul>
+        </div>
+    </div>
+</section>
+<!-- ==========Banner Section Ends Here========== -->
+
+
+<!-- ==========Teacher Single Section Starts Here========== -->
+<section class="speaker-single-section padding-top padding-bottom">
+    <div class="container">
+        <div class="teacher-wrapper">
+            <div class="teacher-single-top">
+                <div class="teacher-single-item d-flex flex-wrap justify-content-between">
+                    
+                    <div class="teacher-single-content">
+                        <h4 class="title">
+                            <ul>
+                                <li class="d-flex flex-wrap justify-content-start">
+                                  
+                                    <span class=""> {{ datap.name }} {{ datap.family }}      </span>
+                                </li>
+                                <li class="d-flex flex-wrap justify-content-start">
+                                  
+                                    <span class="">  {{ datap.cod_meli }}      </span>
+                                </li>
+                            </ul>
+                           
+
+
+                        
+                          </h4>
+
+
+                        <p>
+                         
+                            
+                             
+                             
+                                  <div class="card" style="width:400px">
+                                    <img class="card-img-top" src="{{ datap.imagp.url }}" alt="Card image">
+                                    <div class="card-body">
+                                   
+                                      <p class="card-text"> 
+                                        <ul>
+                                        <li class="d-flex flex-wrap justify-content-start">
+                                            <span class="list-name">آدرس</span>
+                                            <span class="list-attr">  {{ datap.adress_m }}    </span>
+                                        </li>
+                                       
+                                        <li class="d-flex flex-wrap justify-content-start">
+                                            <span class="list-name">تلفن</span>
+                                            <span class="list-attr">  {{ datap.tel }}  </span>
+                                        </li>
+                                    
+                                    </ul></p>
+                      
+                                    </div>
+                                  </div>
+                      
+                           
+                      
+                          
+                      
+                             </p>
+              
+                             <li class="d-flex flex-wrap justify-content-start">
+                                <span class="list-name">مصاحبه</span>
+                                <span class="list-attr">مصاحبه را بخوانید</span>
+                            </li>
+                            <li class="d-flex flex-wrap justify-content-start">
+                                <span class="list-name">شبکه های اجتماعی</span>
+                                <ul class="list-attr d-flex flex-wrap justify-content-start">
+                                    <li>
+                                        <a class="twitter" href="#"><i class="fab fa-twitter"></i></a>
+                                    </li>
+                                    <li>
+                                        <a class="instagram" href="#"><i class="fab fa-instagram"></i></a>
+                                    </li>
+                                    <li>
+                                        <a class="basketball" href="#"><i class="fas fa-basketball-ball"></i></a>
+                                    </li>
+                                    <li>
+                                        <a class="vimeo" href="#"><i class="fab fa-vimeo-v"></i></a>
+                                    </li>
+                                    <li>
+                                        <a class="beahnce" href="#"><i class="fab fa-behance"></i></a>
+                                    </li>
+                                </ul>
+                            </li>
+                       
+                    </div>
+
+
+                   
+                  
+                </div>
+            </div>
+            <div class="row teacher-single-bottom mb--50">
+                <div class="col-lg-6 pb-20 d-flex flex-wrap justify-content-lg-start justify-content-between">
+                    <h6 class="w-100 subtitle">مهارت شخصی</h6>
+                    <div class="text-center skill-item">
+                        <div class="skill-thumb">
+                            <div class="circles text-center" id="circles">
+                                <div class="circle first" data-percent="96">
+                                    <strong>96<i>%</i></strong>
+                                </div>							
+                            </div>
+                        </div>
+                        <p>انگلیسی</p>
+                    </div>
+                   
+                </div>
+                <div class="col-lg-6 pb-20 d-flex flex-wrap justify-content-lg-start justify-content-between">
+                    <h6 class="w-100 subtitle">جایزه تقدیرنامه ها</h6>
+                    <div class="skill-item text-center">
+                        <div class="skill-thumb">
+                            <img src="assets/images/teacher/01.png" alt="teacher">
+                        </div>
+                        <p>
+                            جایزه 1395
+                        </p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ==========Teacher Single Section Ends Here========== -->
+
+
+{% endblock %}
+{% block script %}
+
+
+   <script src="{% static 'assets/js/script_panels.js' %}"></script>
+{% endblock %}
+
+   

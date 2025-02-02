@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+{% load static %}
+{% block body %}
+<section class="page-header bg_img" data-background="{% static 'assets/images/banner/page-header.jpg' %}">
+    <div class="container">
+        <div class="page-header-content">
+            <h1 class="title">      </h1>
+            <ul class="breadcrumb">
+                <li>
+                    <a href="/index">خانه</a>
+                </li>
+              
+               
+             
+            </ul>
+        </div>
+    </div>
+</section>
+<!-- ==========Banner Section Ends Here========== -->
+<div class="gallery-section padding-top padding-bottom pos-rel">
+    <div class="top-shape-center">
+        <img src="{%static 'assets/css/img/gallery1.png'%}" alt="css">
+    </div>
+    <div class="bottom-shape-left">
+        <img src="{%static 'assets/css/img/bottom-shape.png'%}" alt="css">
+    </div>
+  
+   
+    
+       
+       
+  
+
+   
+ 
+        <div class="masonary-item preschool kinder">
+            <div class="masonary-thumb">
+                {% csrf_token %}
+                {% for item in image %}
+                   <img src="{{item.image.url}}" alt="gallery">  
+                   
+                {% endfor %}   
+         
+              
+               
+            
+            </div>
+           
+        </div>
+      
+</div> 
+
+<!-- ==========Login Section Section Ends Here========== -->
+
+{% endblock %}
+{% block script %}
+
+
+   <script src="{% static 'assets/js/script_panels.js' %}"></script>
+{% endblock %}
+
+
+
+
+            
+         
+
+           
+               
+             
+  

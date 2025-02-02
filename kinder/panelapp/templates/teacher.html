@@ -1,0 +1,246 @@
+{% extends "layout.html" %}
+{% load static %}
+{% block body %}
+<section class="page-header bg_img" data-background="{% static 'assets/images/banner/page-header.jpg' %}">
+    <div class="container">
+        <div class="page-header-content">
+            <h1 class="title">بهترین مربیان ما</h1>
+            <ul class="breadcrumb">
+                <li>
+                    <a href="/index">خانه</a>
+                </li>
+                
+                <li>
+                    مربیان
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!-- ==========Banner Section Ends Here========== -->
+
+
+<!-- ==========Teacher Section Starts Here========== -->
+<section class="teacher-section padding-top padding-bottom pos-rel">
+    <div class="top-shape-center">
+        <img src="{% static 'assets/css/img/gallery1.png' %}" alt="css">
+    </div>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="section-header">
+                    <span class="cate">با کارکنان ما ملاقات کنید</span>
+                    <h3 class="title">بهترین مربیان محبوب ما</h3>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center mb-30-none">
+            <div class="col-lg-3 col-sm-6">
+                <div class="teacher-item-2">
+                    <div class="teacher-thumb">
+                       
+                         <div class="content">
+                             <h5 class="title">
+                                <table class="table">
+                                    <tbody class="body-tabel"> 
+                                    {% csrf_token %} 
+                                    {% for item in tabelp %}
+                                        <tr>
+                                            <td> <div class="thumb">
+                                                <a href="/getp/{{item.id}}"> 
+                                                  <img  alt="پنل شخصی"  > 
+                                                    
+                                                 </a>
+                                             </div>
+                                            </td>     
+                                            <td>{{item.name }} {{item.family}}</td>
+                                      
+                                            <td>
+                                                    <ul class="teacher-social justify-content-center">
+                                                        <li>
+                                                                <i class=""> <button type="button"  onclick="setp('{{item.name}}','{{item.family}}','{{item.cod_meli}}',{{item.mahal_tavalod}}','{{item.datetime}}','{{item.mizantahsilat}}','{{item.reshtetasili}}','{{item.doreamozeshi}}','{{item.sabeghekar}}',{{item.savabeghshoghli}}','{{item.semat}}','{{item.elattarkkar}}''{{item.semataknon}}','{{item.tahol}}',{{item.namehamsar}}','{{item.tedadfarzand}}','{{item.tel}}','{{item.telsabet}}','{{item.adress_m}}','{{item.imagp}}','{{item.id}}')"
+                                                                    class="" data-toggle="modal" data-target="#myModal">
+                                                                            ویرایش
+                                                                                </button></i>
+                                                                        </li>
+                                                                        <li>
+                                                                        <i class="">
+                                                                            <button type="button"  onclick="$('.id').val('{{item.id}}')"
+                                                                                    class="danger" data-toggle="modal" data-target="#myModaldelet">
+                                                                            حذف
+                                                                            </button>
+                                                                            </i>
+                                                                    </li>
+                                                                    
+                                                        </ul>
+                                                    </td>
+                    
+                            
+                                        </tr>
+                                    {% endfor %}
+                                    </tbody>
+                                </table>
+                                                
+                              </h5>
+          
+                             
+                             
+                           
+                     </div>
+                    
+                 </div>
+             </div>
+             <div class="teacher-content">
+                <ul class="teacher-social justify-content-center">
+                   
+                    <li>
+                        <a href="#" class="google"><i class="fab fa-google-plus-g"></i></a>
+                    </li>
+                    <li>
+                        <a href="#" class="dribble"><i class="fab fa-dribbble"></i></a>
+                    </li>
+                    <li>
+                        <a href="#" class="vimeo"><i class="fab fa-vimeo-v"></i></a>
+                    </li>
+                    <li>
+                        <a href="#" class="pinterest"><i class="fab fa-pinterest-p"></i></a>
+                    </li>
+                </ul>
+            </div>
+         </div>
+                      
+                  
+                </div>
+            </div>
+           
+        </div>
+    </div>
+</section>
+<!-- ==========Teacher Section Ends Here========== -->
+
+
+<!-- ==========Call-In-Section Starts Here========== -->
+<section class="call-in-action call-overlay bg_img padding-bottom padding-top" data-background="{% static 'assets/images/bg/call-bg.jpg' %}">
+    <div class="container">
+        <div class="call-wrapper">
+            <div class="section-header mb-olpo">
+                <h3 class="title">مربی شدن</h3>
+                <p>اگر می خواهید به عنوان مربی با ما همکاری کنید تا دانش و تجربه حرفه ای خود را به کودکان منتقل کنیم ، ما می گوییم به عنوان خانواده مربی ما خوش آمدید</p>
+            </div>
+            <div class="text-center">
+                <button type="button" class="custom-button"  onclick="creatp()" data-toggle="modal" data-target="#myModal"><span> فرم ثبت نام مربی</span>
+                    
+                </button>
+
+                
+            </div>
+        </div>
+    </div>
+      
+    <div class="modal" id="myModal">
+        <div class="modal-dialog">
+          <div class="modal-content" style="direction:rtl;">
+    
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <h4 class="modal-title">ثبت نام /ویرایش</h4>
+              <button type="button" class="close ml-0" data-dismiss="modal">&times;</button>
+            </div>
+    
+            <!-- Modal body -->
+            <div class="modal-body text-right">
+                <form method="post" action="" class="frm">
+                            {% csrf_token %}
+                            {% for item in form %}
+                                 <div class="fom_group ">
+                                        {{ item.label_tag }}
+                                        {{ item }}
+                                 </div>
+                            {% endfor %}
+    
+    
+                           <div class="alert alert-info result " >
+    
+                           </div>
+                    <div class="text_center" >
+                        <button type="button" class="btn btn-info ml-2  savedatap " >ارسال   </button>
+    
+                    </div>
+                </form>
+
+              
+            </div>
+    
+    
+    
+          </div>
+        </div>
+      </div>
+    
+
+    
+    
+</div>
+</section>
+<!-- ==========Call-In-Section Ends Here========== -->
+
+
+<!-- ==========Teacher Section Starts Here========== -->
+<section class="teacher-section padding-bottom padding-top bg_img" data-background="{% static 'assets/images/teacher/teacher-bg.jpg' %}">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="section-header">
+                    <span class="cate">با کارکنان ما ملاقات کنید</span>
+                    <h3 class="title">بهترین مربیان محبوب ما</h3>
+                </div>
+            </div>
+        </div>
+        <div class="row mb-30-none justify-content-center">
+            <div class="col-lg-6">
+                <div class="teacher-item">
+                    <div class="teacher-inner">
+                        <div class="teacher-thumb">
+                            <div class="thumb-inner">
+                                <a href="/teacher-single"><img src="assets/images/teacher/teacher01.jpg" alt="teacher"></a>
+                            </div>
+                        </div>
+                        <div class="teacher-content">
+                            <h6 class="title"><a href="/teacher-single">مسعود راستی</a></h6>
+                            <span class="info">مربی زبان اسپانیایی</span>
+                            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است</p>
+                            <ul class="teacher-social">
+                                <li>
+                                    <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#" class="twitter"><i class="fab fa-twitter"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#" class="pinterest"><i class="fab fa-pinterest-p"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#" class="vimeo"><i class="fab fa-vimeo-v"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#" class="behance"><i class="fab fa-behance"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>
+<!-- ==========Teacher Section Ends Here========== -->
+{% endblock %}
+{% block script %}
+{{ form.media }}
+
+<script src="{% static 'assets/js/script_panels.js' %}"></script>
+{% endblock %}
+
+
+  

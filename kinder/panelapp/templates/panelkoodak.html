@@ -1,0 +1,122 @@
+{% extends "layout.html" %}
+{% load static %}
+{% block body %}
+<section class="page-header bg_img" data-background="{% static 'assets/images/banner/page-header.jpg' %}">
+    <div class="container">
+        <div class="page-header-content">
+            <h1 class="title">   <p>   {{ data.name }} {{ data.family }} </p>  </h1>
+            <ul class="breadcrumb">
+                <li>
+                    <a href="/index">خانه</a>
+                </li>
+               
+               
+
+                
+                <li>
+                    
+                    
+                      {% block user %}
+                    {% if user_st.state == True %}
+                    شما با نام کاربری
+                    {{ user_st.user }}
+                    در سایت هستید
+
+                    <a class="btn-btn-dager" href=" /logouts "> خروج </a>
+                    {% endif %}
+                    {% if user_st.state == False %}
+                    وارد حساب خود شوید
+                    
+                    {% endif %}
+                    
+                    
+                    {% endblock %}
+                    
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!-- ==========Banner Section Ends Here========== -->
+
+
+<!-- ==========Teacher Single Section Starts Here========== -->
+<section class="speaker-single-section padding-top padding-bottom">
+    <div class="container">
+        <div class="teacher-wrapper">
+            <div class="teacher-single-top">
+                <div class="teacher-single-item d-flex flex-wrap justify-content-between">
+
+                   
+  
+                    <div class="teacher-single-content">
+                        <h4 class="title">
+                            <ul>
+                                <li class="d-flex flex-wrap justify-content-start">
+                                  
+                                    <span class="">  {{ data.name }} {{ data.family }}   </span>
+                                </li>
+                                <li class="d-flex flex-wrap justify-content-start">
+                                  
+                                    <span class="">  {{ data.cod_meli }}     </span>
+                                </li>
+                            </ul>
+                           
+
+
+                        
+                          </h4>
+
+
+                        <p> 
+                         
+                            
+                             
+                             
+                                  <div class="card" style="width:400px">
+                                    <img class="card-img-top" src="{{ data.imagk.url }}" alt="Card image">
+                                    <div class="card-body">
+                                   
+                                      <p class="card-text"> 
+                                        <ul>
+                                        <li class="d-flex flex-wrap justify-content-start">
+                                            <span class="list-name">آدرس</span>
+                                            <span class="list-attr"> {{ data.adress_m }}     </span>
+                                        </li>
+                                       
+                                        <li class="d-flex flex-wrap justify-content-start">
+                                            <span class="list-name">تلفن</span>
+                                            <span class="list-attr">{{ data.telpedar }}  </span>
+                                        </li>
+                                    
+                                    </ul></p>
+                      
+                                    </div>
+                                  </div>
+                      
+                           
+                      
+                          
+                      
+                           </p>
+              
+                      
+                       
+                    </div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>
+<!-- ==========Teacher Single Section Ends Here========== -->
+
+
+{% endblock %}
+{% block script %}
+
+
+   <script src="{% static 'assets/js/script_panels.js' %}"></script>
+{% endblock %}
+

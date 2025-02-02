@@ -1,0 +1,215 @@
+{% extends "layout.html" %}
+{% load static %}
+{% block body %}
+<section class="page-header bg_img" data-background="{% static 'assets/images/banner/page-header.jpg' %}">
+    <div class="container">
+        <div class="page-header-content">
+            <h1 class="title">لیست کودکان  </h1>
+            <ul class="breadcrumb">
+                <li>
+                    <a href="/index">خانه</a>
+                </li>
+                
+                <li>
+                  نو اموزان 
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!-- ==========Banner Section Ends Here========== -->
+
+
+<!-- ==========Teacher Section Starts Here========== -->
+<section class="teacher-section padding-top padding-bottom pos-rel">
+    <div class="top-shape-center">
+        <img src="assets/css/img/gallery1.png" alt="css">
+    </div>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="section-header">
+                    <span class="cate">با کودکان  ما ملاقات کنید</span>
+                    <h3 class="title">نو گلان   محبوب ما</h3>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center mb-30-none">
+            <div class="col-lg-3 col-sm-6">
+                <div class="teacher-item-2">
+                    <div class="teacher-thumb">
+                       
+                        <div class="content">
+                            <h5 class="title">
+                                <table class="table">
+                                   
+                                <tbody class="body-tabel"> 
+                                 {% csrf_token %} 
+                                 {% for item in tabel %}
+                                
+                                <tr>
+                                    <td>
+                                        <div class="thumb">
+                                         <a href="/get/{{item.id}}"> 
+                                           <img  alt="پنل شخصی"  > 
+                                             
+                                          </a>
+                                      </div>  </td>                                              
+            
+                                    <td>{{item.name }} {{item.family}}</td>
+                                    <td>        <ul class="teacher-social justify-content-center">
+                                        <li>
+                                            <i class=""> <button type="button"  onclick="setk('{{item.name}}','{{item.family}}','{{item.cod_meli}}','{{item.mahal_tavalod}}','{{item.datetime}}','{{item.namepedar}}','{{item.tahsilatpedar}}','{{item.shoghlepedar}}','{{item.telpedar}}','{{item.adress_p}}','{{item.namemadar}}','{{item.tahsilatmadar}}','{{item.shoghlmadar}}','{{item.telmadar}}','{{item.telsabet}}','{{item.adress_m}}','{{item.adressmanzel}}','{{item.codeposti}}','{{item.vatsap}}','{{item.imagk}}','{{item.id}}')"
+                                                class="" data-toggle="modal" data-target="#myModal">
+                               ویرایش
+                                                  </button></i>
+                                        </li>
+                                        <li>
+                                            <i class="">
+                                                <button type="button"  onclick="$('.id').val('{{item.id}}')"
+                                                        class="danger" data-toggle="modal" data-target="#myModaldelet">
+                                                 حذف
+                                                </button>
+                                                 </i>
+                                        </li>
+                                       
+                                    </ul>
+                                  
+                                       </td>
+                               
+              
+              
+        
+                </tr>
+                       {% endfor %}
+            </tbody>
+        </table>
+                                
+                                </h5>
+         
+                            
+                            
+                          
+                    </div>
+                   
+                </div>
+            </div>
+           
+        </div>
+    </div>
+</section>
+<!-- ==========Teacher Section Ends Here========== -->
+
+
+<!-- ==========Call-In-Section Starts Here========== -->
+<section class="call-in-action call-overlay bg_img padding-bottom padding-top" data-background="{% static 'assets/images/bg/call-bg.jpg'%}">
+    <div class="container">
+        <div class="call-wrapper">
+            <div class="section-header mb-olpo">
+                <h3 class="title"> دلبندتان را به ما بسپارید</h3>
+                <p>اگر می خواهید   کودکتان را به ما بسپارید</p>
+            </div>
+            <div class="text-center">
+                <button type="button" class="custom-button"  onclick="creatk()" data-toggle="modal" data-target="#myModal"><span> فرم ثبت نام کودک</span>
+                    
+                </button>
+
+               
+            </div>
+        </div>
+    </div>
+    <div class="modal" id="myModal">
+        <div class="modal-dialog">
+          <div class="modal-content" style="direction:rtl;">
+    
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <h4 class="modal-title">ثبت نام /ویرایش</h4>
+              <button type="button" class="close ml-0" data-dismiss="modal">&times;</button>
+            </div>
+    
+            <!-- Modal body -->
+            <div class="modal-body text-right">
+                <form method="post" action="" class="frm">
+                            {% csrf_token %}
+                            {% for item in form %}
+                                 <div class="fom_group text-right">
+                                            {{ item.label_tag }}
+                                            {{ item }}
+                                 </div>
+                            {% endfor %}
+    
+    
+                           <div class="alert alert-info result " >
+    
+                           </div>
+                    <div class="text_center" >
+                        <button type="button" class="btn btn-info ml-2   savedatak" >ارسال   </button>
+    
+                    </div>
+                </form>
+            </div>
+    
+    
+    
+          </div>
+        </div>
+      </div>
+    
+    <div class="modal" id="myModaldelet">
+        <div class="modal-dialog">
+          <div class="modal-content" style="direction:rtl;">
+    
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <h4 class="modal-title">تاییدیه حذف</h4>
+              <button type="button" class="close ml-0" data-dismiss="modal">&times;</button>
+            </div>
+    
+            <!-- Modal body -->
+            <div class="modal-body text-right">
+                <form method="post" action="" class="frm-delet">
+                      {% csrf_token %}
+                    <input type="hidden" name="id" class="id">
+                        ایا مایل به حذف هستید
+    
+    
+                           <div class="alert alert-info result-delet " >
+    
+                           </div>
+                    <div class="text_center" >
+                        <button type="button" class="btn btn-info ml-2  ok_deletk " >بله   </button>
+    
+                    </div>
+                </form>
+            </div>
+    
+    
+    
+          </div>
+        </div>
+      </div>
+    
+    
+    
+    
+    
+       
+    </div>      
+  
+</section>
+<!-- ==========Call-In-Section Ends Here========== -->
+
+
+<!-- ==========Teacher Section Starts Here========== -->
+
+<!-- ==========Teacher Section Ends Here========== -->
+{% endblock %}
+{% block script %}
+{{ form.media }}
+
+<script src="{% static 'assets/js/script_panels.js' %}"></script>
+{% endblock %}
+
+
+  
